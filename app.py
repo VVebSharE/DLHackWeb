@@ -6,12 +6,13 @@ from flask_jwt_extended import JWTManager
 from dotenv import load_dotenv
 import os
 from database import db
+from flask_cors import CORS
 
 
 load_dotenv()
 
 app = Flask(__name__)
-
+CORS(app)
 
 app.register_blueprint(auth, url_prefix='/auth')
 app.register_blueprint(infer, url_prefix='/infer')
@@ -37,5 +38,5 @@ def segment_image_socket(data):
     socketio.emit('segmentedImage', result)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
 

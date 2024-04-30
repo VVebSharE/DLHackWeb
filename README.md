@@ -34,3 +34,4 @@ To run the Flask application, execute the following command:
 
 ```bash
 flask run
+```
