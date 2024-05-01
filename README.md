@@ -28,6 +28,14 @@ This project demonstrates the segmentation of grape images  in real-time.
     JWT_SECRET_KEY=your_secret_key_here
     ```
 
+5. Update in inferece.py to add the path of the model file.
+
+    ```
+    from PIDNET_UPDATed.tools.custommy import Model #change this import to your model
+    mymodel = Model()
+    ```
+
+
 ## Usage
 
 To run the Flask application, execute the following command:
@@ -35,3 +43,14 @@ To run the Flask application, execute the following command:
 ```bash
 flask run
 ```
+
+To run on local network:
+
+```bash
+flask run --host=0.0.0.0
+```
+
+## Integrate your Frontend
+
+Update the request url in the frontend to the url of the backend server.
+

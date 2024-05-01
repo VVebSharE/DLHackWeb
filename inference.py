@@ -8,12 +8,21 @@ import base64
 from PIL import Image
 from io import BytesIO
 
-from Model.model import ImageSegmenter
+# from Model.model import ImageSegmenter
 
-segmenter = ImageSegmenter('fcn_resnet50')
+from PIDNET_UPDATed.tools.custommy import Model
+
+mymodel = Model()
+
+
+
+# segmenter = ImageSegmenter('fcn_resnet50')
 
 def model(image_data: Image) -> Image:
-    return segmenter.segment_image(image_data)
+    # return segmenter.segment_image(image_data)
+    return mymodel.predict(image_data)
+
+
 
 
 infer = Blueprint('infer', __name__)
